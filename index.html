@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="calculator-shell">
+      <section class="calculator" aria-label="Calculator">
+        <header class="calculator-header">
+          <div class="calculator-title">
+            <h1>🧮 Calculator</h1>
+            <p class="keyboard-hint">Keyboard Supported</p>
+            <p class="shortcut-info">
+                Enter = Equal | Backspace = Delete | Esc = Clear
+            </p>
+          </div>
+          <div class="toolbar">
+            <button id="theme-toggle" class="btn icon-btn" type="button" aria-label="Toggle theme">Theme</button>
+            <button id="copy-button" class="btn icon-btn" type="button" aria-label="Copy result">Copy</button>
+          </div>
+        </header>
+
+        <div class="display" aria-live="polite">
+          <div id="expression" class="expression">0</div>
+          <div class="result-wrapper">
+            <div id="result" class="result">0</div>
+          </div>
+        </div>
+
+        <div class="history-panel">
+          <button id="history-toggle" class="history-toggle" type="button" aria-expanded="false">
+            History <span id="history-count" class="history-count">0</span>
+          </button>
+          <div id="history-content" class="history-content">
+            <div class="history-meta">
+              <span>Last 10 calculations</span>
+              <button id="clear-history" class="btn history-clear" type="button">Clear History</button>
+            </div>
+            <ul id="history-list" class="history-list"></ul>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="btn accent" data-action="clear">AC</button>
+          <button class="btn accent" data-action="delete">DEL</button>
+          <button class="btn operator" data-value="/">÷</button>
+          <button class="btn operator" data-value="*">×</button>
+
+          <button class="btn number" data-value="7">7</button>
+          <button class="btn number" data-value="8">8</button>
+          <button class="btn number" data-value="9">9</button>
+          <button class="btn operator" data-value="-">−</button>
+
+          <button class="btn number" data-value="4">4</button>
+          <button class="btn number" data-value="5">5</button>
+          <button class="btn number" data-value="6">6</button>
+          <button class="btn operator" data-value="+">+</button>
+
+          <button class="btn number" data-value="1">1</button>
+          <button class="btn number" data-value="2">2</button>
+          <button class="btn number" data-value="3">3</button>
+          <button class="btn equals" data-action="equals">=</button>
+
+          <button class="btn number zero" data-value="0">0</button>
+          <button class="btn number" data-value=".">.</button>
+        </div>
+
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
